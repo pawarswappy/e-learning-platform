@@ -1,0 +1,739 @@
+ /* General Reset */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+
+/* Header */
+  
+  /* Navbar Styles */
+  nav {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .menu {
+    display: flex;
+  }
+  
+  .menu ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  .menu ul li a {
+    margin: 0 15px;
+    cursor: pointer;
+    color: #ddd;
+    text-decoration: none;
+  }
+  
+  .menu ul li a:hover {
+    color: #4CAF50;
+  }
+  
+  .menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .menu {
+      display: none; 
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      /* right: 0; */
+      background-color: #333;
+      width: 100%;
+      height: fit-content;
+      padding: 10px 0;
+    }
+  
+    .menu.active {
+      display: flex; 
+      width: 100%;
+    }
+  
+    .menu ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      z-index: 1000;
+    }
+  
+    .menu ul li a {
+      margin: 10px 0;
+      color: #ddd;
+      text-decoration: none;
+    }
+  
+    .menu-icon {
+      display: block; 
+    }
+  }
+
+
+
+/* Hero Section */
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("https://thephagroup.com/wp-content/uploads/2019/12/AdobeStock_271791778.jpeg");
+    background-size: cover;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+/* 3D Effect Circle */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), inset 0 0 100px rgba(0, 0, 0, 0.5);
+    animation: moveCircle 6s ease infinite;
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Circle animation for 3D effect */
+@keyframes moveCircle {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Hero Content */
+.hero-content {
+    z-index: 1;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 2s ease;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: black;
+}
+
+.hero-content button {
+    background: #f4b400;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.hero-content button:hover {
+    background: #d49800;
+}
+
+/* Keyframes for Fade-In Animation */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animated Text */
+.animated-text {
+    /* color: red; */
+    font-weight: 800;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+}
+
+
+
+
+/* About Section */
+.about {
+    padding: 4rem 2rem;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.about p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 2rem;
+}
+
+.feature {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    flex: 1 1 calc(33.333% - 2rem); 
+    max-width: calc(33.333% - 2rem); 
+    box-sizing: border-box;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 1024px) {
+    .feature {
+        flex: 1 1 calc(50% - 2rem); 
+        max-width: calc(50% - 2rem);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .about h2 {
+        font-size: 2rem; 
+    }
+
+    .about p {
+        font-size: 1rem; 
+    }
+
+    .feature {
+        flex: 1 1 calc(100% - 2rem); 
+        max-width: calc(100% - 2rem);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .about h2 {
+        font-size: 1.8rem; 
+    }
+
+    .about p {
+        font-size: 0.9rem; 
+    }
+
+    .feature {
+        padding: 1rem; 
+    }
+}
+
+
+/* Courses Section */
+.courses {
+    padding: 4rem 2rem;
+    text-align: center;
+    background: #fff;
+}
+
+.courses h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.course-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.course-card {
+    background: #f9f9f9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+}
+
+.course-card img {
+    width: 100%;
+    height: auto;
+}
+
+.course-card h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    color: #333;
+}
+
+.course-card p {
+    padding: 0 1rem;
+    font-size: 1rem;
+    color: #666;
+}
+
+.course-card button {
+    margin: 1rem;
+    background: #f4b400;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.course-card button:hover {
+    background: #d49800;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.modal-content h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.modal-content form input, .modal-content form select, .modal-content form button {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.modal-content form button {
+    background: #f4b400;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.modal-content form button:hover {
+    background: #d49800;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 4rem 2rem;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.testimonial-slider {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto; /* Allows horizontal scrolling on smaller screens */
+    scroll-behavior: smooth;
+    padding: 1rem 0;
+}
+
+.testimonial {
+    min-width: 300px;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.testimonial-img {
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover; 
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 3px solid #f4f4f4;
+}
+
+.testimonial p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.testimonial h4 {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .testimonial-slider {
+        flex-wrap: nowrap;
+        overflow-x: auto; 
+    }
+
+    .testimonial {
+        min-width: 80%; 
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .testimonials h2 {
+        font-size: 2rem; 
+    }
+
+    .testimonial p {
+        font-size: 1rem; 
+    }
+
+    .testimonial-img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+/* Scrollbar container */
+.testimonial-slider::-webkit-scrollbar {
+    width: 10px; 
+    height: 10px; 
+}
+
+.testimonial-slider::-webkit-scrollbar-track {
+    background: #f4f4f4; 
+    border-radius: 10px; 
+}
+
+.testimonial-slider::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px; 
+}
+
+/* Thumb hover effect */
+.testimonial-slider::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+/* Firefox-specific styling */
+.testimonial-slider {
+    scrollbar-width: thin; 
+    scrollbar-color: #888 #f4f4f4; 
+}
+
+
+/* Contact Section */
+.contact {
+    padding: 4rem 2rem;
+    background: #fff;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact form input, .contact form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact form button {
+    background: #f4b400;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.contact form button:hover {
+    background: #d49800;
+}
+
+.contact .contact-info {
+    margin-top: 2rem;
+    color: #666;
+}
+
+.contact .social-links a {
+    margin: 0 10px;
+    color: #f4b400;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.contact .social-links a:hover {
+    color: #d49800;
+}
+
+/* Footer */
+footer {
+    padding: 1rem 0;
+    background: #333;
+    color: #fff;
+    text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .about h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .courses h2 {
+        font-size: 2.2rem;
+    }
+
+    .feature h3 {
+        font-size: 1.4rem;
+    }
+
+    .course-card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .about p {
+        font-size: 1.1rem;
+    }
+
+    .feature {
+        padding: 1rem;
+    }
+
+    .courses {
+        padding: 3rem 1rem;
+    }
+
+    .testimonial-slider {
+        flex-direction: column;
+    }
+
+    .contact form input, .contact form textarea {
+        width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .course-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact form input, .contact form textarea {
+        width: 90%;
+    }
+
+    .feature h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .contact form input, .contact form textarea {
+        width: 100%;
+    }
+}
+
+
+/* <------------ scroll button ------------>  */
+
+
+.scroll-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: bounce 2s infinite;
+  }
+  .scroll-btn:hover {
+    background-color: #0056b3;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }

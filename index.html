@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">E-Learning Platform</div>
+            <div class="menu-icon" onclick="toggleMenu()">
+              ☰
+            </div>
+            <div class="menu">
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+
+
+
+   <!-- Home Section -->
+   <section id="home" class="hero">
+    <div class="hero-content">
+        <h1 class="animated-text">Welcome to Your Learning Journey</h1>
+        <p>Unlock Your Potential Anytime, Anywhere</p>
+        <button onclick="scrollToSection('#courses')">Explore Courses</button>
+    </div>
+</section>
+
+<!-- Courses Section -->
+<section id="courses">
+    <!-- Content for courses section goes here -->
+</section>
+
+
+
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>We are dedicated to providing high-quality online courses for learners of all levels.</p>
+        <div class="features">
+            <div class="feature">
+                <h3>Flexibility</h3>
+                <p>Learn at your own pace.</p>
+            </div>
+            <div class="feature">
+                <h3>Expert Tutors</h3>
+                <p>Learn from industry leaders.</p>
+            </div>
+            <div class="feature">
+                <h3>Certifications</h3>
+                <p>Earn certificates to boost your career.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <h2>Our Courses</h2>
+        <div class="course-container">
+            <div class="course-card" data-course="Course 1">
+                <img src="https://kodmek.com/wp-content/uploads/2021/01/front-end-developer-1600x900-1.jpg" alt="Course 1">
+                <h3>Front-End-Developer</h3>
+                <p>Learn programming with hands-on exercises.</p>
+                <button class="book-course">Book Now</button>
+            </div>
+            <div class="course-card" data-course="Course 2">
+                <img src="https://www.devstringx.com/wp-content/uploads/2022/12/Backend-Technologies.jpg" alt="Course 2">
+                <h3>Backend-Developer</h3>
+                <p>Master web development techniques.</p>
+                <button class="book-course">Book Now</button>
+            </div>
+            <div class="course-card" data-course="Course 3">
+                <img src="https://infinitegraphixads.com/wp-content/uploads/2020/11/Full-Stack-Developer-Course.png" alt="Course 3">
+                <h3>Full-Stack-Developer</h3>
+                <p>Explore data science and machine learning.</p>
+                <button class="book-course">Book Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+
+
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Students Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <img src="https://www.mheducation.co.uk/media/wysiwyg/first-year_university_student.jpg" alt="Maria Garcia" class="testimonial-img">
+
+                <p>"This platform changed my life! The courses are amazing."</p>
+                <h4>- Alex Johnson</h4>
+            </div>
+            <div class="testimonial">
+                <img src="https://schooltutoring.com/help/wp-content/uploads/sites/2/2014/07/high-res-student-smiling.jpg" alt="Alex Johnson" class="testimonial-img">
+
+                <p>"I learned so much in such a short time. Highly recommend."</p>
+                <h4>- Maria Garcia</h4>
+            </div>
+            <div class="testimonial">
+                <img src="https://images.hindustantimes.com/rf/image_size_640x362/HT/p1/2015/03/18/Incoming/Pictures/1327679_Wallpaper2.jpg" alt="Daniel Lee" class="testimonial-img">
+                <p>"Great content and fantastic instructors. Worth every penny!"</p>
+                <h4>- Daniel Lee</h4>
+            </div>
+            <div class="testimonial">
+                <img src="https://www.kindpng.com/picc/m/40-405645_college-student-images-png-transparent-png.png" alt="Daniel Lee" class="testimonial-img">
+                <p>"Great content and fantastic instructors. Worth every penny!"</p>
+                <h4>-Nera Athera</h4>
+            </div>
+
+            <div class="testimonial">
+                <img src="https://img.freepik.com/premium-photo/portrait-smiling-young-college-student-with-books-backpack-against-white-background_662251-2926.jpg?w=2000" alt="Daniel Lee" class="testimonial-img">
+                <p>"This platform changed my life! The courses are amazing."</p>
+                <h4>-vishal Rathod</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit" onclick="alert('This is just for test, thank you for click it'); return false;">Send Message</button>
+        </form>
+        <div class="contact-info">
+            <p><strong>Email:</strong> info@elearning.com</p>
+            <p><strong>Address:</strong> 123 Learning Street, Knowledge City</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 E-Learning Platform</p>
+    </footer>
+
+    <!-- Modal Popup -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Book a Course</h2>
+            <form id="bookingForm">
+                <input type="text" id="modalName" placeholder="Your Name" required>
+                <input type="email" id="modalEmail" placeholder="Your Email" required>
+                <select id="modalCourse" required>
+                    <option value="">Select a Course</option>
+                    <option value="Course 1">Front-End-Developer</option>
+                    <option value="Course 2">Backend-Developer</option>
+                    <option value="Course 3">Full-Stack-Developer</option>
+                </select>
+                <button onclick="alert('This is just for test, Thank you for click it'); return false;" type="submit">Book Now</button>
+            </form>
+        </div>
+    </div>
+
+<button class="scroll-btn" id="scrollButton">Scroll to Top</button>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
